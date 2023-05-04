@@ -63,7 +63,7 @@ class PdoStudentRepository implements StudentRepository
 
   private function insert(Student $student): bool
   {
-    $insertQuery = 'INSERT INTO students (name birth_date) VALUES (:name, :birth_date);';
+    $insertQuery = 'INSERT INTO students (name, birth_date) VALUES (:name, :birth_date);';
     $stmt = $this->connection->prepare($insertQuery);
 
     $success = $stmt->execute([
